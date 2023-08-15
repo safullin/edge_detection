@@ -59,6 +59,10 @@ class CropActivity : BaseActivity(), ICropView.Proxy {
 
         menu.findItem(R.id.rotation_image).isVisible = showMenuItems
 
+        menu.setGroupVisible(R.id.enhance_group, initialBundle.getBoolean(EdgeDetectionHandler.IS_FILTER_VISIBLE))
+        menu.findItem(R.id.rotation_image).isVisible = initialBundle.getBoolean(EdgeDetectionHandler.IS_ROTATION_VISIBLE)
+
+
         menu.findItem(R.id.gray).title =
             initialBundle.getString(EdgeDetectionHandler.CROP_BLACK_WHITE_TITLE) as String
         menu.findItem(R.id.reset).title =

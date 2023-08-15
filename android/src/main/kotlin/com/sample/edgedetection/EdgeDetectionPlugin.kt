@@ -50,6 +50,8 @@ class EdgeDetectionHandler : MethodCallHandler, PluginRegistry.ActivityResultLis
         const val CROP_TITLE = "crop_title"
         const val CROP_BLACK_WHITE_TITLE = "crop_black_white_title"
         const val CROP_RESET_TITLE = "crop_reset_title"
+        const val IS_ROTATION_VISIBLE = "is_rotation_visible"
+        const val IS_FILTER_VISIBLE = "is_filter_visible"
     }
 
     fun setActivityPluginBinding(activityPluginBinding: ActivityPluginBinding) {
@@ -116,7 +118,9 @@ class EdgeDetectionHandler : MethodCallHandler, PluginRegistry.ActivityResultLis
         bundle.putString(CROP_BLACK_WHITE_TITLE, call.argument<String>(CROP_BLACK_WHITE_TITLE) as String)
         bundle.putString(CROP_RESET_TITLE, call.argument<String>(CROP_RESET_TITLE) as String)
         bundle.putBoolean(CAN_USE_GALLERY, call.argument<Boolean>(CAN_USE_GALLERY) as Boolean)
-
+        bundle.putBoolean(IS_ROTATION_VISIBLE, call.argument<Boolean>(IS_ROTATION_VISIBLE) as Boolean)
+        bundle.putBoolean(IS_FILTER_VISIBLE, call.argument<Boolean>(IS_FILTER_VISIBLE) as Boolean)
+       
         initialIntent.putExtra(INITIAL_BUNDLE, bundle)
 
         getActivity()?.startActivityForResult(initialIntent, REQUEST_CODE)
