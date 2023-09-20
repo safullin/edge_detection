@@ -73,7 +73,7 @@ class CropActivity : BaseActivity(), ICropView.Proxy {
             findViewById<ImageView>(R.id.crop).visibility = View.GONE
         } else {
             menu.findItem(R.id.action_label).isVisible = false           
-            menu.setGroupVisible(R.id.enhance_group, false))
+            menu.setGroupVisible(R.id.enhance_group, false)
             findViewById<ImageView>(R.id.crop).visibility = View.VISIBLE
         }
 
